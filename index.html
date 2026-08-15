@@ -26,7 +26,7 @@
     --ease: cubic-bezier(.16,.84,.44,1);
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   body {
     font-family: 'Inter', sans-serif;
     background: var(--cream);
@@ -67,6 +67,8 @@
     transition: transform .8s var(--ease), opacity .6s ease .1s;
   }
   .preloader.hide { transform: translateY(-100%); opacity: 0; pointer-events: none; }
+  .preloader-runner { height: 56px; width: auto; opacity: 0; animation: fadeIn .5s ease forwards .15s; }
+  @keyframes fadeIn { to { opacity: 1; } }
   .preloader-word { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(28px, 5vw, 44px); letter-spacing: .02em; display: flex; overflow: hidden; }
   .preloader-word span { display: inline-block; opacity: 0; transform: translateY(100%); animation: rise .6s var(--ease) forwards; }
   @keyframes rise { to { opacity: 1; transform: translateY(0); } }
@@ -103,7 +105,7 @@
   .mobile-menu a { color: var(--cream); font-family: 'Outfit', sans-serif; font-size: 30px; font-weight: 700; text-decoration: none; }
 
   /* ─────────── hero ─────────── */
-  .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 90px; }
+  .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 90px; overflow: hidden; }
   .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .55; pointer-events: none; }
   .blob-1 { width: 620px; height: 620px; top: -220px; right: -160px; background: radial-gradient(circle, #7ed9c4 0%, rgba(126,217,196,0) 70%); animation: float1 16s ease-in-out infinite; }
   .blob-2 { width: 500px; height: 500px; bottom: -260px; left: -180px; background: radial-gradient(circle, #b6f09c 0%, rgba(182,240,156,0) 70%); animation: float2 20s ease-in-out infinite; }
@@ -337,6 +339,7 @@
 <div class="cursor-ring"></div>
 
 <div class="preloader" id="preloader">
+  <img class="preloader-runner" src="assets/running.gif" alt="" />
   <div class="preloader-word" id="preWord"></div>
   <div class="preloader-bar"><span></span></div>
 </div>
@@ -404,28 +407,28 @@
       </div>
     </div>
   </div>
+</section>
 
-  <div class="marquee-wrap">
-    <div class="marquee-mask">
-      <div class="marquee-track">
-        <div class="marquee-item"><span>Gyms</span><i></i></div>
-        <div class="marquee-item"><span>Personal Trainers</span><i></i></div>
-        <div class="marquee-item"><span>Boutique Studios</span><i></i></div>
-        <div class="marquee-item"><span>Sports Clubs</span><i></i></div>
-        <div class="marquee-item"><span>Classes</span><i></i></div>
-        <div class="marquee-item"><span>Outdoor Activities</span><i></i></div>
-        <div class="marquee-item"><span>Wellness &amp; Recovery</span><i></i></div>
-        <div class="marquee-item"><span>Gyms</span><i></i></div>
-        <div class="marquee-item"><span>Personal Trainers</span><i></i></div>
-        <div class="marquee-item"><span>Boutique Studios</span><i></i></div>
-        <div class="marquee-item"><span>Sports Clubs</span><i></i></div>
-        <div class="marquee-item"><span>Classes</span><i></i></div>
-        <div class="marquee-item"><span>Outdoor Activities</span><i></i></div>
-        <div class="marquee-item"><span>Wellness &amp; Recovery</span><i></i></div>
-      </div>
+<div class="marquee-wrap">
+  <div class="marquee-mask">
+    <div class="marquee-track">
+      <div class="marquee-item"><span>Gyms</span><i></i></div>
+      <div class="marquee-item"><span>Personal Trainers</span><i></i></div>
+      <div class="marquee-item"><span>Boutique Studios</span><i></i></div>
+      <div class="marquee-item"><span>Sports Clubs</span><i></i></div>
+      <div class="marquee-item"><span>Classes</span><i></i></div>
+      <div class="marquee-item"><span>Outdoor Activities</span><i></i></div>
+      <div class="marquee-item"><span>Wellness &amp; Recovery</span><i></i></div>
+      <div class="marquee-item"><span>Gyms</span><i></i></div>
+      <div class="marquee-item"><span>Personal Trainers</span><i></i></div>
+      <div class="marquee-item"><span>Boutique Studios</span><i></i></div>
+      <div class="marquee-item"><span>Sports Clubs</span><i></i></div>
+      <div class="marquee-item"><span>Classes</span><i></i></div>
+      <div class="marquee-item"><span>Outdoor Activities</span><i></i></div>
+      <div class="marquee-item"><span>Wellness &amp; Recovery</span><i></i></div>
     </div>
   </div>
-</section>
+</div>
 
 <section class="props" id="how">
   <div class="wrap">
